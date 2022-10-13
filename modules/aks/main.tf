@@ -59,9 +59,9 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
 
 
   identity {
-    #type = "UserAssigned"
-    #user_assigned_identity_id = azurerm_user_assigned_identity.aks_identity.id
-    type = "SystemAssigned" 
+    type = "UserAssigned"
+    identity_ids = [azurerm_user_assigned_identity.aks_identity.id]
+    #type = "SystemAssigned" 
   }
 
   network_profile {
@@ -72,6 +72,7 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
     service_cidr       = var.network_service_cidr
     network_policy     = var.network_policy
   }
+  
 
 /*
   addon_profile {
