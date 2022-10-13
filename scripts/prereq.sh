@@ -1,2 +1,2 @@
 az group create --name terraformBackendRG --location eastus
-az storage account create --resource-group terraformBackendRG --name terraformBackenAcct --location eastus --sku Standard_LRS
+az storage account create --resource-group terraformBackendRG --name tfbackendacct --location eastus --sku Standard_LRS
